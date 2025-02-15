@@ -1,6 +1,7 @@
 {
     "python.analysis.extraPaths": [
         "./src/wineQuality",
-        "./src/wineQuality"
+        "./src/wineQuality",
+        "./src"
     ]
 }
