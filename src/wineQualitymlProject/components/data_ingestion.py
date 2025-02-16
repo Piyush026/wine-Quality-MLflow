@@ -33,6 +33,8 @@ class DataIngestion:
         """
         unzip_path = self.config.unzip_dir
         os.makedirs(unzip_path, exist_ok=True)
-        with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
-            zip_ref.extractall(unzip_path)
+        if zipfile.is_zipfile(self.config.local_data_file):
+            with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+                zip_ref.extractall(unzip_path)
+        return None
   
